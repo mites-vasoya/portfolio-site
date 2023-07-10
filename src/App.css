@@ -1,0 +1,729 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+
+.App {
+    /*border: 3px solid #fa0505;*/
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    scroll-behavior: smooth;
+    overflow: auto;
+    scroll-snap-type: y proximity;
+    box-sizing: border-box;
+}
+
+.first-div {
+    /*border: 2px solid blue;*/
+    background-color: #c8cf15;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    background-size: cover;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.first-div > .subdiv1 {
+    /*border: 3px solid #e8fb0b;*/
+    height: calc(100% - 100px);
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}
+
+.subdiv1 > .contentDiv {
+    /*border: 1px solid maroon;*/
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-around;*/
+}
+
+.contentDiv > .title {
+    /*border: 1px solid black;*/
+    width: fit-content;
+    height: fit-content;
+    margin: 20% auto 30px 10%;
+    font-family: 'Barlow', sans-serif;
+    font-size: 70px;
+    font-weight: 600;
+}
+
+.contentDiv > .title > p {
+    /*border: 1px solid red;*/
+    margin: 0px auto auto auto;
+    font-size: 90px;
+    font-weight: 600;
+    text-shadow: 3px 2px 4px rgba(255, 242, 0, 0.98);
+    position: relative;
+    z-index: 3;
+}
+
+@keyframes cursorBlink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.contentDiv > .title > p::after {
+    content: "|";
+    margin-left: 6px;
+    font-size: 100px;
+    animation: cursorBlink 1s ease-in-out infinite alternate-reverse;
+}
+
+.contentDiv > .title > p::before {
+    content: "";
+    background-color: rgba(238, 255, 0, 0.7);
+    width: 100%;
+    height: 6px;
+    bottom: 6px;
+    left: 0px;
+    position: absolute;
+    z-index: 0;
+}
+
+.contentDiv > .desTitle {
+    border-bottom: 3px solid #0c5468;
+    width: fit-content;
+    height: fit-content;
+    margin: 0px auto 50px 10%;
+    font-family: 'Barlow', sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.contentDiv > .btns {
+    /*border: 1px solid red;*/
+    width: 80%;
+    margin: 60px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.btns > span {
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: #000000;
+    color: white;
+    box-shadow: 4px 4px 7px 0px black;
+    width: 40%;
+    height: 50px;
+    font-family: "Doppio One";
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    transition: ease-in-out 0.25s;
+}
+
+.btns > span:active {
+    transform: scale(0.98);
+}
+
+.btns > span::after {
+    content: "";
+    background-color: rgba(248, 248, 248, 0.54);
+    width: 30px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0%;
+    opacity: 0;
+}
+
+@keyframes contactBtnHoverAnim {
+    0% {
+        opacity: 0.4;
+        left: -15%;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.4;
+        left: 115%;
+    }
+}
+
+.btns > span:hover::after {
+    animation: contactBtnHoverAnim 1.5s ease-in-out;
+}
+
+.btns > span > a {
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    margin: auto;
+    text-decoration: none;
+}
+
+
+.btns > span > a.contactBtn {
+    transition: ease-in-out 1s;
+}
+
+.subdiv1 > .imgDiv {
+    /*border: 1px solid #0008ff;*/
+    border-radius: 80px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.imgDiv > div.profilePic {
+    border: 10px solid #000000;
+    border-radius: 50%;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.imgDiv > div.profilePic > img {
+    border: 6px solid #fbfbfb;
+    border-radius: 50%;
+    filter: grayscale(100%) brightness(90%) saturate(100%);
+    height: 500px;
+    width: 500px;
+    object-fit: cover;
+    margin: auto auto auto auto;
+}
+
+.imgDiv > .btns2 {
+    /*border: 1px solid red;*/
+    border-radius: 0;
+    width: 60px;
+    height: 250px;
+    margin: auto 70px auto auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.imgDiv > .btns2 > a {
+    margin: 4px auto;
+}
+
+.btns2 > a > img {
+    border: 1px solid black;
+    border-radius: 50%;
+    box-shadow: 0 0 10px -4px black;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    margin: auto 5px auto 5px;
+    cursor: pointer;
+    transition: ease-in-out 0.25s;
+}
+
+.btns2 > a > img:hover {
+    transform: scale(1.08);
+}
+
+.btns2 > a > img:active {
+    transform: scale(0.97);
+}
+
+.first-div > .scrollImgDiv {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 45px);
+    box-sizing: border-box;
+}
+
+.first-div > .scrollImgDiv > a > img {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+@keyframes scrollBtn {
+    0% {
+        color: white;
+        opacity: 0.5;
+    }
+
+    50% {
+        color: black;
+        opacity: 1;
+    }
+    100% {
+        color: white;
+        opacity: 0.5;
+    }
+}
+
+.first-div > .scrollImgDiv > a > img:hover {
+    animation: scrollBtn ease-in-out 1.8s infinite;
+}
+
+.projectsPage {
+    border-top: 1px solid rgba(200, 207, 21);
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+}
+
+.projectsPage > .titleDiv {
+    /*border: 1px solid red;*/
+    background-color: #c8cf15;
+    height: 180px;
+}
+
+.projectsPage > .titleDiv > .title {
+    /*border: 1px solid blue;*/
+    width: fit-content;
+    height: fit-content;
+    margin: 10px auto auto auto;
+    font-family: "Doppio One";
+    font-size: 50px;
+    position: relative;
+}
+
+.projectsPage > .titleDiv > .title::after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+}
+
+.projectsPage > .cardsContainer {
+    border: 3px solid rgba(200, 207, 21, 0.8);
+    border-radius: 60px 60px 0 0;
+    background-color: black;
+    box-shadow: 0 0 30px 0 black;
+    width: 95%;
+    height: 107%;
+    margin: -80px auto -7% auto;
+    padding: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.cardsContainer > .cardGrid {
+    /*border: 1px solid red;*/
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.cardsContainer > .cardGrid > .card {
+    border: 3px solid rgba(253, 249, 9, 0.92);
+    border-radius: 5px;
+    width: 31%;
+    height: 30vw;
+    position: relative;
+    overflow: hidden;
+    transition: ease-in-out 0.3s;
+}
+
+.cardsContainer > .cardGrid > .card:hover {
+    box-shadow: 0 0 50px 05px rgba(200, 207, 21, 0.76);
+}
+
+.cardsContainer > .cardGrid > .card:nth-child(2n+1) {
+    margin: 4% auto auto auto;
+}
+
+.cardsContainer > .cardGrid > .card:nth-child(2n+2) {
+    margin: 10% auto auto auto;
+}
+
+.card > .cardBgImg {
+    background-color: white;
+    padding: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 0;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    opacity: 0.6;
+    transition: ease-in-out 0.22s;
+}
+
+.card > .titleDiv {
+    /*border: 1px solid red;*/
+    background-color: #f6f6f6;
+    width: 100%;
+    height: 100px;
+    margin: auto;
+    position: absolute;
+    top: calc(50% - 50px);
+    left: 0%;
+    font-family: "Doppio One";
+    font-size: 40px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    z-index: 3;
+    transition: ease-in-out 0.5s;
+}
+
+.card:hover .titleDiv {
+    width: 100%;
+    top: 0;
+    left: 0;
+    font-size: 46px;
+    opacity: 0.9;
+}
+
+.card > .titleDiv > .title {
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    margin: auto;
+}
+
+.card > .contentDiv {
+    background-color: rgba(11, 10, 10, 0.7);
+    color: white;
+    width: 100%;
+    height: calc(100% - 100px);
+    margin: auto;
+    padding: 10px;
+    position: absolute;
+    top: 100px;
+    left: 0%;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    z-index: 3;
+    opacity: 0
+}
+
+@keyframes contentDivAnim {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.cardsContainer > .cardGrid > .card:hover .contentDiv {
+    animation: contentDivAnim 0.5s ease 0.23s 1 normal forwards;
+}
+
+.card > .contentDiv > .content {
+    /*border: 1px solid salmon;*/
+    width: 95%;
+    height: fit-content;
+    margin: auto auto;
+    font-family: Candara;
+    font-size: 1.2vw;
+    font-weight: 600;
+    text-align: justify;
+    text-indent: 50px;
+    box-sizing: border-box;
+    opacity: 0;
+}
+
+@keyframes cardContentAnim {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.card:hover .contentDiv > .content {
+    animation: cardContentAnim 1s ease 0.6s 1 normal forwards;
+}
+
+.cardsContainer > .contactPageTitle {
+    color: white;
+    width: 100%;
+    height: 100px;
+    margin: auto auto 1% auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactPageTitle > .title {
+    color: #c8cf15;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    font-family: "Doppio One";
+    font-size: 60px;
+    position: relative;
+}
+
+@keyframes contactTitleAnim {
+    0% {
+        background-position-x: 0;
+    }
+    50% {
+        background-position-x: 90%;
+    }
+    100% {
+        background-position-x: 0;
+    }
+}
+
+.contactPageTitle > .title::after {
+    content: "";
+    background-image: linear-gradient(45deg, #10994f 0%, #c8cf15 100%);
+    background-size: 200%;
+    width: 100%;
+    height: 6px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    animation: contactTitleAnim ease-in-out 6s infinite;
+}
+
+.contactPage {
+    border: 2px solid #55ff00;
+    background-color: #c8cf15;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    background-size: cover;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactPage > .contactFormDiv {
+    border: 1px solid #c8cf15;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 15px 30px -20px black;
+    width: 60%;
+    height: 50vh;
+    margin: 23vh auto auto auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.contactPage > .contactFormDiv > .contactForm {
+    /*border: 1px solid red;*/
+    width: 60%;
+    height: fit-content;
+    margin: auto;
+}
+
+.contactPage > .contactFormDiv > .devider {
+}
+
+.contactPage > .contactFormDiv > .myInfoDiv {
+    border: 1px solid red;
+    background-color: black;
+    width: 35%;
+    height: 100%;
+    margin: auto 0 auto auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.contactFormDiv > .myInfoDiv > .mailDiv {
+}
+
+.myInfoDiv > .mailDiv > .title {
+    color: #c8cf15;
+    width: fit-content;
+    height: fit-content;
+    margin: 30px auto 0 30px;
+    font-family: "Doppio One";
+    font-size: 25px;
+    position: relative;
+}
+
+.myInfoDiv > .mailDiv > .title::after {
+    content: "";
+    background-color: #c8cf15;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+}
+
+.myInfoDiv > .mailDiv > .mailId {
+    /*border: 1px solid red;*/
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    margin: 10px auto 0 60px;
+    font-family: Candara;
+    font-size: 20px;
+}
+
+.socialMediaLinks {
+    margin-top: 20px;
+}
+
+.socialMediaLinks > .title {
+    color: #c8cf15;
+    width: fit-content;
+    height: fit-content;
+    margin: 30px auto 0 30px;
+    font-family: "Doppio One";
+    font-size: 25px;
+    position: relative;
+}
+
+.socialMediaLinks > .title::after {
+    content: "";
+    background-color: #c8cf15;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+}
+
+.socialMediaLinks > .links {
+    width: 70%;
+    height: 50px;
+    margin: 20px auto 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
+
+.socialMediaLinks > .links > a {
+    border: 2px solid #c8cf15;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    transition: ease-in-out 0.2s;
+}
+
+.socialMediaLinks > .links > a:hover {
+    transform: scale(0.95);
+}
+
+
+.socialMediaLinks > .links > a > img {
+    border-radius: 50%;
+    box-shadow: 0 0 10px -4px black;
+    background-color: white;
+    height: 100%;
+    /*margin: 10px 5px auto 5px;*/
+    object-fit: cover;
+    cursor: pointer;
+    transition: ease-in-out 0.25s;
+    box-sizing: border-box;
+}
+
+
+.contactFormDiv > .contactForm > .title {
+    /*border: 1px solid red;*/
+    width: 98%;
+    height: fit-content;
+    margin: auto;
+}
+
+.contactForm > .title > p {
+    /*border: 1px solid blue;*/
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    font-family: "Doppio One";
+    font-size: 30px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+
+.contactForm > .title > p::after {
+    content: "";
+    background-color: black;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.contactForm > span {
+    /*border: 1px solid red;*/
+    width: 90%;
+    height: fit-content;
+    margin: 30px auto 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contactForm > span > input {
+    border: 1px solid black;
+    height: 45px;
+    margin: auto;
+    padding: 0 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.contactForm > span.span1 > input {
+    width: 48%;
+}
+
+.contactForm > span.span1 > input:focus {
+    border: 1px solid red;
+}
+
+.contactForm > span.span2 > input {
+    width: 98%;
+}
+
+.contactForm > span.span3 > input {
+    width: 98%;
+}
+
+.contactForm > span.span4 > input {
+    width: 98%;
+}
+
+.contactForm > span > .submitBtn {
+    border: 1px solid black;
+    background-color: #c8cf15;
+    color: black;
+    width: 98%;
+    height: 50px;
+    margin: auto auto 30px auto;
+    font-size: 20px;
+}
