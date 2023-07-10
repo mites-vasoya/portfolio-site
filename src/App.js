@@ -6,6 +6,7 @@ import GitHubIcon from "./assets/GitHub.png";
 import LinkedInIcon from "./assets/LinkedIn.png";
 import TwitterIcon from "./assets/Twitter.png";
 import ShopCartImg from "./assets/ShopCart.png"
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -171,6 +172,7 @@ function App() {
                 </div>
             </div>
         </div>
+        <Footer/>
     </div>);
 }
 

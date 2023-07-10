@@ -1,0 +1,37 @@
+.footer {
+    /*border: 1px solid red;*/
+    border-radius: 50px 50px 0 0;
+    background-color: black;
+    color: #c8cf15;
+    width: 100%;
+    height: 10vh;
+    margin: -6vh auto auto auto;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.footer > .copyright {
+    width: 30%;
+    height: fit-content;
+    margin: auto auto 0 auto;
+    position: absolute;
+    top: 20px;
+    left: calc(35%);
+    text-align: center;
+    font-family: "Doppio One";
+    font-size: 22px;
+}
+
+.footer > .developeBy {
+    width: 30%;
+    height: fit-content;
+    margin: auto auto 0 auto;
+    position: absolute;
+    top: 60px;
+    left: calc(35%);
+    text-align: center;
+    font-family: "Doppio One";
+    font-size: 22px;
+}
+

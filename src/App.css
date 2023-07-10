@@ -274,7 +274,7 @@
 }
 
 .projectsPage {
-    border-top: 1px solid rgba(200, 207, 21);
+    /*border-top: 1px solid #c8cf15;*/
     background-color: black;
     width: 100%;
     height: 100%;
@@ -529,7 +529,7 @@
     box-shadow: 0 15px 30px -20px black;
     width: 60%;
     height: 50vh;
-    margin: 23vh auto auto auto;
+    margin: 26vh auto auto auto;
     overflow: hidden;
     display: flex;
     flex-direction: row;
@@ -546,7 +546,7 @@
 }
 
 .contactPage > .contactFormDiv > .myInfoDiv {
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     background-color: black;
     width: 35%;
     height: 100%;
